@@ -11,11 +11,11 @@ export default function Footer() {
         {/* Left Side: Brand & Copyright */}
         <div className="flex flex-col items-center md:items-start gap-2 mt-4">
           <div className="flex items-center gap-2 font-bold text-xl tracking-tight">
-            <span className="text-white">Dev</span>
+            <span className="text-white">Egan's</span>
             <span className="text-teal-400">Portfolio</span>
           </div>
           <p className="text-gray-500 text-xs tracking-wide">
-            © {currentYear} Alex Rivera. All rights reserved.
+            © {currentYear} Egan Victor. All rights reserved.
           </p>
         </div>
 

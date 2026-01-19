@@ -27,14 +27,14 @@ export default function ExperiencePage() {
             </h2>
           </div>
 
-          <div className="relative border-l border-white/10 ml-3 space-y-16">
+          <div className="relative  pl-2 border-white/10  space-y-16">
             {EXPERIENCE.map((exp, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="relative pl-10"
+                className="relative pl-10 mb-2 "
               >
                 {/* Timeline Dot */}
                 <div className="absolute w-4 h-4 bg-teal-400 rounded-full -left-2 top-1 shadow-[0_0_15px_rgba(20,184,166,0.5)]" />
@@ -63,7 +63,7 @@ export default function ExperiencePage() {
         </div>
 
         {/* Right Side: Technical Toolkit */}
-        <div className="lg:col-span-5 space-y-8">
+        {/* <div className="lg:col-span-5 space-y-8">
           <div className="flex items-center gap-3 mb-8">
             <Code className="text-teal-400" size={20} />
             <h2 className="text-xl font-bold uppercase tracking-widest">
@@ -96,7 +96,7 @@ export default function ExperiencePage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );

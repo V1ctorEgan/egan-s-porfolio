@@ -17,7 +17,7 @@ export const PROJECTS = [
     category: "Web",
     description: "Logistics ecosystem connecting vehicle owners with service seekers. Built complete payment flows and real-time route selection.",
     image: "/expertd.png",
-    link: "#",
+    link: "https://expertdex-mobile.vercel.app/",
     type: "visit",
     tags: ["React", "APIs", "Logistics"]
   },
@@ -103,8 +103,38 @@ export const EXPERIENCE = [
       "Built a social media management app allowing multi-platform content scheduling and analytics.",
       "Streamlined UI/UX to improve usability and engagement."
     ]
+  },
+  {
+    role: "React Native Developer",
+    company: "GrowQuest",
+    period: "Jul 2025 - Sep 2025",
+    points: [
+      "Built a mentorship and personal development app with multi-role mentor–mentee features.",
+      "Developed a digital library with book reading and video playback.",
+      "Implemented structured community discussions and optimized a Reels-style short video viewer.",
+      "Integrated Firebase and Firestore with scalable state management."
+    ]
+  },
+  {
+    role: "React Native Developer",
+    company: "UzoRides",
+    period: "Sep 2025 - Nov 2025",
+    points: [
+      "Developed core mobile features including authentication, ride requests, and trip flow systems.",
+      "Integrated real-time maps, geolocation, and route updates.",
+      "Connected frontend to backend APIs for ride lifecycle, payments, and tracking."
+    ]
+  },
+  {
+    role: "Mobile App Developer",
+    company: "Reality3DHub",
+    period: "Oct 2025 - Sep 2025",
+    points: [
+      "Developed an electric-bike companion app with real-time speed, distance, and battery tracking.",
+      "Built dashboards for monitoring bike performance."
+    ]
   }
-  // ... Continue adding Vulue, Grow Quest, and Reality 3DHub here
+  
 ];
 
 export const SKILL_GROUPS = [

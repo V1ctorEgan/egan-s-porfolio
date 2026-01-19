@@ -114,6 +114,7 @@ export default function SelectedWorks() {
                   ) : (
                     <Link
                       href={`/projects/${project.slug}`}
+                      scroll={false}
                       className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border border-teal-400/40 text-teal-400 font-bold text-xs uppercase tracking-wider hover:bg-teal-400/10 transition-all"
                     >
                       Case Study <BookOpen size={14} />
