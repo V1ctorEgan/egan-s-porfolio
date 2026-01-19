@@ -7,7 +7,7 @@ export const PROJECTS = [
     category: "Web",
     description: "A Next.js global talent marketplace connecting verified engineers with companies. Featuring multi-step onboarding and certificate verification.",
     image: "/enginemart.png", 
-    link: "https://enginemarts.com",
+    link: "https://engine-maps-z785.vercel.app/",
     type: "visit",
     tags: ["Next.js", "Full Stack", "Auth"]
   },
@@ -16,9 +16,9 @@ export const PROJECTS = [
     title: "ExpertDex Logistics",
     category: "Web",
     description: "Logistics ecosystem connecting vehicle owners with service seekers. Built complete payment flows and real-time route selection.",
-    image: "/expertdex-preview.jpg",
+    image: "/expertd.png",
     link: "#",
-    type: "case",
+    type: "visit",
     tags: ["React", "APIs", "Logistics"]
   },
   {
@@ -36,11 +36,32 @@ export const PROJECTS = [
     title: "Grow Quest",
     category: "Mobile",
     description: "Personal development app with digital libraries, mentorship portals, and social video features like reels.",
-    image: "/growquest-preview.jpg",
+    image: "/growquest-preview.png",
     link: "#",
     type: "case",
     tags: ["Cross-Platform", "Community"]
-  }
+  },
+  {
+    slug: "sui-exchange",
+    title: "Sui Exchange",
+    category: "Web3",
+    description: "a decentralized marketplace where developers, content creators, etc, can meet in the sui ecosystem",
+    image: "/suie.png",
+    link: "https://sui-exchange.vercel.app/",
+    type: "visit",
+    tags: ["Sui move", "smart contract"]
+  },
+  {
+    slug: "ledger-vote",
+    title: "LedgerVote",
+    category: "Web3",
+    description: "a decentralized voting system which is tamper-free, transparent and facilitates free and fair elections",
+    image: "/ledgervote.png",
+    link: "https://ledger-votes.vercel.app/",
+    type: "visit",
+    tags: ["Sui move", "smart contract"]
+  },
+
 ];
 
 export const TECH_STACK = [

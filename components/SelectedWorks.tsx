@@ -1,86 +1,37 @@
 "use client";
+
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ExternalLink,
   BookOpen,
-  Code2,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
 
-const categories = ["All", "Web", "Mobile", "Web3"];
+// Using your actual data from lib/data.ts
 import { PROJECTS as projects } from "@/lib/data";
-// const projects = [
-//   {
-//     title: "NFT Marketplace",
-//     category: "WEB3",
-//     description:
-//       "High-frequency trading platform for digital collectibles with real-time floor price tracking and gas-optimized minting.",
-//     image: "/logo.png",
-//     link: "#",
-//     type: "visit",
-//   },
-//   {
-//     title: "Fitness Tracker",
-//     category: "MOBILE",
-//     description:
-//       "Cross-platform mobile application featuring biometric data sync, social challenges, and AI-driven workout plans.",
-//     image: "/fitness.png",
-//     link: "#",
-//     type: "case",
-//   },
-//   {
-//     title: "DAO Governance",
-//     category: "WEB3",
-//     description:
-//       "On-chain voting dashboard with delegated voting power and automatic treasury execution upon proposal passage.",
-//     image: "/dao.png",
-//     link: "#",
-//     type: "visit",
-//   },
-//   {
-//     title: "Budget Pro",
-//     category: "MOBILE",
-//     description:
-//       "Secure personal finance manager with automatic expense categorization and encrypted local storage.",
-//     image: "/budget.png",
-//     link: "#",
-//     type: "case",
-//   },
-//   {
-//     title: "DevStream SaaS",
-//     category: "WEB",
-//     description:
-//       "A project management tool for remote engineering teams featuring kanban boards and CI/CD status integration.",
-//     image: "/devstream.png",
-//     link: "#",
-//     type: "visit",
-//   },
-//   {
-//     title: "SecureChat",
-//     category: "MOBILE",
-//     description:
-//       "End-to-end encrypted messaging application with self-destructing messages and P2P video calls.",
-//     image: "/chat.png",
-//     link: "#",
-//     type: "case",
-//   },
-// ];
+
+const categories = ["All", "Web", "Mobile", "Web3"];
 
 export default function SelectedWorks() {
   const [filter, setFilter] = useState("All");
 
   const filteredProjects = projects.filter((p) =>
-    filter === "All" ? true : p.category.toLowerCase() === filter.toLowerCase()
+    filter === "All" ? true : p.category.toLowerCase() === filter.toLowerCase(),
   );
 
   return (
-    <section id="projects" className="w-full px-6 lg:px-24 py-24 bg-[#0a0c10]">
+    <section
+      id="projects"
+      className="w-full  px-6 lg:px-24 py-24 bg-[#0a0c10] min-h-screen"
+    >
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
         <div className="space-y-4">
-          <span className="text-teal-400 font-mono text-[10px] tracking-[0.3em] font-bold uppercase">
+          <span className="text-teal-400 font-mono text-[10px] tracking-[0.4em] font-bold uppercase">
             Portfolio
           </span>
           <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight">
@@ -93,14 +44,14 @@ export default function SelectedWorks() {
         </div>
 
         {/* Category Filter */}
-        <div className="flex bg-[#111827] p-1.5 rounded-xl border border-white/5">
+        <div className="flex h-fit p-0 bg-transparent  rounded-xl  border-white/5 items-center jusfity-center mb-2">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-lg text-sm font-bold transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 ${
                 filter === cat
-                  ? "bg-teal-400 text-black"
+                  ? "bg-teal-400 text-black shadow-[0_0_20px_rgba(45,212,191,0.3)]"
                   : "text-gray-400 hover:text-white"
               }`}
             >
@@ -119,18 +70,22 @@ export default function SelectedWorks() {
           {filteredProjects.map((project) => (
             <motion.div
               layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              key={project.title}
-              className="group bg-[#111827]/30 border border-white/5 rounded-[2rem] overflow-hidden hover:border-teal-400/30 transition-all duration-500"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              key={project.slug}
+              className="group bg-[#111827]/60 border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-teal-400/30 transition-all duration-500"
             >
-              {/* Image Container */}
-              <div className="aspect-[4/3] bg-[#1a2333] relative overflow-hidden m-3 rounded-[1.5rem]">
-                <div className="absolute inset-0 flex items-center justify-center text-white/10 font-bold text-4xl uppercase tracking-tighter">
-                  {project.title.split(" ")[0]}
-                </div>
-                {/* Image overlay or actual Image component would go here */}
+              {/* Image Container - FIXED: Added relative and h-64 */}
+              <div className="relative aspect-4/3 w-full bg-[#1a2333] overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-[#0a0c10]/60 to-transparent" />
               </div>
 
               {/* Content */}
@@ -139,33 +94,33 @@ export default function SelectedWorks() {
                   <h3 className="text-2xl font-bold text-white tracking-tight">
                     {project.title}
                   </h3>
-                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] font-bold font-mono text-gray-400 tracking-wider">
+                  <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[9px] font-bold font-mono text-gray-400 tracking-wider uppercase">
                     {project.category}
                   </span>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 h-12">
+                <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 h-10">
                   {project.description}
                 </p>
 
                 <div className="flex gap-3 pt-2">
-                  <button
-                    className={`flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all border ${
-                      project.type === "visit"
-                        ? "bg-teal-400 text-black border-teal-400 hover:bg-transparent hover:text-teal-400"
-                        : "bg-transparent text-teal-400 border-teal-400/50 hover:bg-teal-400/5"
-                    }`}
-                  >
-                    {project.type === "visit" ? (
-                      <>
-                        Visit Site <ExternalLink size={14} />
-                      </>
-                    ) : (
-                      <>
-                        Case Study <BookOpen size={14} />
-                      </>
-                    )}
-                  </button>
-                  <button className="px-4 rounded-xl border border-white/10 text-gray-400 hover:text-white hover:bg-white/5 transition-all flex items-center justify-center">
+                  {project.type === "visit" ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl bg-teal-400 text-black font-bold text-xs uppercase tracking-wider hover:bg-white hover:text-black transition-all"
+                    >
+                      Visit Site <ExternalLink size={14} />
+                    </a>
+                  ) : (
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border border-teal-400/40 text-teal-400 font-bold text-xs uppercase tracking-wider hover:bg-teal-400/10 transition-all"
+                    >
+                      Case Study <BookOpen size={14} />
+                    </Link>
+                  )}
+
+                  <button className="px-4 rounded-xl border border-white/10 text-gray-400 hover:text-white hover:bg-white/5 transition-all">
                     <div className="flex items-center -space-x-1">
                       <ChevronLeft size={16} />
                       <ChevronRight size={16} />
@@ -178,7 +133,7 @@ export default function SelectedWorks() {
         </AnimatePresence>
       </motion.div>
 
-      {/* Bottom Stats Row - Moved outside the grid to span full width */}
+      {/* Bottom Stats Row */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 pt-16 border-t border-white/5">
         {[
           { val: "24+", label: "Projects Completed" },
@@ -187,10 +142,10 @@ export default function SelectedWorks() {
           { val: "100%", label: "Client Satisfaction" },
         ].map((stat, i) => (
           <div key={i} className="flex flex-col gap-2">
-            <h4 className="text-5xl font-bold text-teal-400 tracking-tighter">
+            <h4 className="text-6xl font-bold text-teal-400 tracking-tighter">
               {stat.val}
             </h4>
-            <p className="text-[10px] tracking-[0.2em] text-gray-500 font-bold uppercase">
+            <p className="text-[10px] tracking-[0.3em] text-gray-500 font-bold uppercase">
               {stat.label}
             </p>
           </div>

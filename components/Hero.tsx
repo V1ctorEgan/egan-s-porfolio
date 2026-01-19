@@ -23,7 +23,8 @@ export default function Hero() {
 
         <p className="text-gray-400 text-lg max-w-xl">
           Building high-performance applications and seamless mobile experiences
-          with different tools
+          with frontend, backend and web3 technologies. i turn complex problems
+          into elegant digital solutions
         </p>
 
         <div className="flex gap-4">

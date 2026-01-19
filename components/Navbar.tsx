@@ -8,7 +8,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
   { name: "Experience", href: "/experience" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -28,7 +28,7 @@ export default function Navbar() {
             href="/"
             className="flex items-center gap-2 font-bold text-xl tracking-tight"
           >
-            <span className="text-teal-400">Dev</span>
+            <span className="text-teal-400">Egan's</span>
             <span className="text-white">Portfolio</span>
           </Link>
 
