@@ -27,9 +27,12 @@ export default function Hero() {
         </p>
 
         <div className="flex gap-4">
-          <button className="bg-teal-400 text-black px-6 py-3 rounded-md font-bold hover:bg-teal-300 transition-colors">
+          <a
+            href="/projects"
+            className="bg-teal-400 text-black px-6 py-3 rounded-md font-bold hover:bg-teal-300 transition-colors"
+          >
             View My Projects
-          </button>
+          </a>
           <button className="border border-white/10 bg-white/5 px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
             Get in Touch
           </button>

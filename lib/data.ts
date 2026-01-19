@@ -1,14 +1,46 @@
 // data.ts
+// lib/data.ts
 export const PROJECTS = [
-  { slug: "etherflow-wallet",
-    title: "EtherFlow Wallet",
-    description: "A cross-platform mobile wallet for the Ethereum ecosystem. Features include biometric security and multi-sig support.",
-    fullCaseStudy: "Here you can write the long version of the project story...",
-    tags: ["React Native", "Ethers.js", "WalletConnect"],
-    link: "#",
-    image: "/logo.png" 
+  {
+    slug: "enginemarts",
+    title: "EngineMarts",
+    category: "Web",
+    description: "A Next.js global talent marketplace connecting verified engineers with companies. Featuring multi-step onboarding and certificate verification.",
+    image: "/enginemart.png", 
+    link: "https://enginemarts.com",
+    type: "visit",
+    tags: ["Next.js", "Full Stack", "Auth"]
   },
-  // Add more projects here
+  {
+    slug: "expertdex",
+    title: "ExpertDex Logistics",
+    category: "Web",
+    description: "Logistics ecosystem connecting vehicle owners with service seekers. Built complete payment flows and real-time route selection.",
+    image: "/expertdex-preview.jpg",
+    link: "#",
+    type: "case",
+    tags: ["React", "APIs", "Logistics"]
+  },
+  {
+    slug: "avly-social",
+    title: "Avly Social",
+    category: "Mobile",
+    description: "Multi-platform social media scheduler and analytics suite designed to improve brand engagement and usability.",
+    image: "/avly.png",
+    link: "#",
+    type: "visit",
+    tags: ["React Native", "Analytics"]
+  },
+  {
+    slug: "grow-quest",
+    title: "Grow Quest",
+    category: "Mobile",
+    description: "Personal development app with digital libraries, mentorship portals, and social video features like reels.",
+    image: "/growquest-preview.jpg",
+    link: "#",
+    type: "case",
+    tags: ["Cross-Platform", "Community"]
+  }
 ];
 
 export const TECH_STACK = [
