@@ -84,7 +84,7 @@ export default function ContactPage() {
                 {[
                   {
                     icon: <Github />,
-                    href: "https://github/v1ctorEgan",
+                    href: "https://github.com/v1ctorEgan",
                     label: "Github",
                   },
                   {

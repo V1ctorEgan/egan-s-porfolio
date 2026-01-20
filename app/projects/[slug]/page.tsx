@@ -25,9 +25,9 @@ export default async function ProjectDetail({
   }
 
   return (
-    <main className="min-h-screen bg-[#0a0c10] text-white">
+    <main className="min-h-screen pt-30 bg-[#0a0c10] text-white">
       {/* Top Navigation */}
-      <nav className="flex justify-between items-center px-6 lg:px-24 py-8 border-b border-white/5">
+      <nav className="flex justify-between items-center mt-6 px-6 lg:px-24 py-8 border-b border-white/5">
         <div className="flex gap-2 items-center text-[10px] font-mono text-gray-500 uppercase tracking-widest">
           <span>Portfolio</span>
           <span className="text-gray-700">/</span>
@@ -48,7 +48,7 @@ export default async function ProjectDetail({
             Case Study: {project.category}
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-bold leading-[1.1] tracking-tighter">
+          <h1 className="text-6xl md:text-7xl  -mt-52 font-bold leading-[1.1] tracking-tighter">
             {project.title}: <br />
             <span className="text-teal-400 italic font-medium">
               Architecture

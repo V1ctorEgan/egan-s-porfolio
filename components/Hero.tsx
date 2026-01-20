@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 pt-32 gap-10">
@@ -34,9 +34,12 @@ export default function Hero() {
           >
             View My Projects
           </a>
-          <button className="border border-white/10 bg-white/5 px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
+          <Link
+            href={"/contact"}
+            className="border border-white/10 bg-white/5 px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors"
+          >
             Get in Touch
-          </button>
+          </Link>
         </div>
       </motion.div>
 
