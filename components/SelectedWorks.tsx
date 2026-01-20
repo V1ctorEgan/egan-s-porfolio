@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,10 +18,17 @@ const categories = ["All", "Web", "Mobile", "Web3"];
 
 export default function SelectedWorks() {
   const [filter, setFilter] = useState("All");
+  // const [isMounted, setIsMounted] = useState(false);
+
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
 
   const filteredProjects = projects.filter((p) =>
     filter === "All" ? true : p.category.toLowerCase() === filter.toLowerCase(),
   );
+
+  // if (!isMounted) return null;
 
   return (
     <section
@@ -63,7 +70,7 @@ export default function SelectedWorks() {
 
       {/* Projects Grid */}
       <motion.div
-        layout
+        // layout
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24"
       >
         <AnimatePresence mode="popLayout">
@@ -152,6 +159,12 @@ export default function SelectedWorks() {
           </div>
         ))}
       </div>
+
+      {filteredProjects.length === 0 && (
+        <div className="py-20 text-center text-gray-500">
+          No projects found in this category.
+        </div>
+      )}
     </section>
   );
 }

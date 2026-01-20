@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageTransition from "@/components/PageTransition"; // Import the wrapper
+import PageTransition from "@/components/PageTransition";
 import "./globals.css";
 
 export default function RootLayout({

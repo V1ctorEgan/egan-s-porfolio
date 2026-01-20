@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { PROJECTS } from "@/lib/data";
+import { PROJECTS } from "../../../lib/data";
 import {
   ArrowLeft,
   Github,
@@ -11,13 +11,14 @@ import {
   Code2,
 } from "lucide-react";
 
-export default function ProjectDetail({
+export default async function ProjectDetail({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   // Find project based on slug from lib/data.ts
-  const project = PROJECTS.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = PROJECTS.find((p) => p.slug === slug);
   // console.log(p.params)
   if (!project) {
     notFound();
@@ -74,7 +75,7 @@ export default function ProjectDetail({
         {/* Mockup Preview */}
         <div className="relative flex justify-center items-center">
           <div className="absolute inset-0 bg-teal-400/10 blur-[120px] rounded-full" />
-          <div className="relative w-full max-w-[380px] aspect-[9/19] bg-[#0a0c10] border-[10px] border-[#1e293b] rounded-[3.5rem] overflow-hidden shadow-2xl ring-1 ring-white/10">
+          <div className="relative w-full max-w-95 aspect-9/19 bg-[#0a0c10] border-10px border-[#1e293b] rounded-[3.5rem] overflow-hidden shadow-2xl ring-1 ring-white/10">
             {/* Phone Notch Detail */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#1e293b] rounded-b-2xl z-20" />
             <Image
@@ -91,7 +92,7 @@ export default function ProjectDetail({
       {/* Deep Dive Section */}
       <section className="px-6 lg:px-24 py-20 bg-[#0d0f14]">
         <div className="flex items-center gap-4 mb-16">
-          <div className="h-[2px] w-12 bg-teal-400" />
+          <div className="h-0.5 w-12 bg-teal-400" />
           <h2 className="text-xs font-bold uppercase tracking-[0.4em] text-white">
             Project Deep Dive
           </h2>
@@ -114,7 +115,7 @@ export default function ProjectDetail({
 
           {/* The Challenge */}
           <div className="bg-[#1e293b]/20 border border-white/5 p-10 rounded-[2.5rem] space-y-6 relative overflow-hidden group">
-            <AlertTriangle className="absolute -right-8 -top-8 w-48 h-48 text-white/[0.02] -rotate-12 group-hover:text-teal-400/[0.02] transition-colors" />
+            <AlertTriangle className="absolute -right-8 -top-8 w-48 h-48 text-white/2 -rotate-12 group-hover:text-teal-400/2 transition-colors" />
             <div className="w-12 h-12 bg-red-400/10 rounded-xl flex items-center justify-center text-red-400">
               <Zap size={24} />
             </div>

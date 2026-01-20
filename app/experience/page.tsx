@@ -1,5 +1,5 @@
 "use client";
-import { EXPERIENCE, SKILL_GROUPS } from "@/lib/data";
+import { EXPERIENCE, SKILL_GROUPS } from "../../lib/data";
 import { motion } from "framer-motion";
 import { Briefcase, Code, Smartphone, Database, Globe } from "lucide-react";
 
